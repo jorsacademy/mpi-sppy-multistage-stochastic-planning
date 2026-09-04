@@ -1,5 +1,3 @@
-import pytest
-
 from stoch_planning.model import PlanningConfig
 from stoch_planning.solve import build_extensive_form, solve_extensive_form
 
@@ -19,6 +17,4 @@ def test_highs_solves_multistage_extensive_form():
 
 
 def test_solution_is_deterministic():
-    a = solve_extensive_form()
-    b = solve_extensive_form()
-    assert a == pytest.approx(b)
+    assert solve_extensive_form() == solve_extensive_form()
